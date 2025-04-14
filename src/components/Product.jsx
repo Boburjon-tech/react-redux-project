@@ -16,28 +16,31 @@ function Product({product}) {
     }
 
   return (
+    <section className='flex flex-col gap-5'>
+    <img src={product.thumbnail}/>
    <Link to={`/producte/${product.id}`}>
     <h2>{product.title}</h2>
     {isAdded && (
-        <>
-            <button onClick={(e)=>{
+        <div className='gap-7 flex'>
+            <button class="inline-flex items-center justify-center order-1 h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition-colors rounded cursor-pointer bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 peer-checked:bg-transparent peer-checked:text-slate-500 hover:peer-checked:bg-transparent peer-checked:hover:text-slate-600 focus:peer-checked:bg-transparent" for="id-c001" onClick={(e)=>{
                 e.preventDefault()
                 dispatch(incrementAmount(product.id))
             }}>+</button>
-            <span>{isAdded.amount}</span>
-            <button onClick={(e)=>{
+            <p className='text-4xl border-2 border-emerald-800 py-1 px-5'>{isAdded.amount}</p>
+            <button class="inline-flex items-center justify-center order-1 h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition-colors rounded cursor-pointer bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 peer-checked:bg-transparent peer-checked:text-slate-500 hover:peer-checked:bg-transparent peer-checked:hover:text-slate-600 focus:peer-checked:bg-transparent" for="id-c001" onClick={(e)=>{
                 e.preventDefault()
                 dispatch(decrementAmount(product.id))}}
             >-</button>
-        </>
+        </div>
     )}
      {!isAdded && (
         <>
-            <button onClick={(e)=>handleBuy(e)}>Buy</button>
+            <button class="inline-flex items-center justify-center order-1 h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition-colors rounded cursor-pointer bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 peer-checked:bg-transparent peer-checked:text-slate-500 hover:peer-checked:bg-transparent peer-checked:hover:text-slate-600 focus:peer-checked:bg-transparent" for="id-c001" onClick={(e)=>handleBuy(e)}>Buy</button>
         </>
     )}
     
    </Link>
+   </section>
   )
 }
 

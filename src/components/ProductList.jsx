@@ -8,7 +8,7 @@ const {data: {products}} = useLoaderData();
 console.log(products);
 
   return (
-    <div>
+    <div className=" grid grid-cols-4 gap-x-6 gap-y-6">
       {products.map((product)=>{
         return <Product key={product.id} product={product}/>
       })}

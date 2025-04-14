@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import {loader as HomeLoader} from "./pages/Home";
 import {loader as ProductLoader} from "./pages/Producte"
+import FooterDarkTheme from './components/Footer';
 
 function App() {
   const routes = createBrowserRouter([
@@ -31,6 +32,10 @@ function App() {
           path: "/producte/:id",
           element : <Producte/>,
           loader:ProductLoader,
+        },
+        {
+          path : "/footer",
+          element : <FooterDarkTheme/>
         }
       ]
     }
