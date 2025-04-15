@@ -35,7 +35,7 @@ function Product({product}) {
     )}
      {!isAdded && (
         <>
-            <button class="inline-flex items-center justify-center order-1 h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition-colors rounded cursor-pointer bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 peer-checked:bg-transparent peer-checked:text-slate-500 hover:peer-checked:bg-transparent peer-checked:hover:text-slate-600 focus:peer-checked:bg-transparent" for="id-c001" onClick={(e)=>handleBuy(e)}>Buy</button>
+            <button className="inline-flex items-center justify-center order-1 h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition-colors rounded cursor-pointer bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 peer-checked:bg-transparent peer-checked:text-slate-500 hover:peer-checked:bg-transparent peer-checked:hover:text-slate-600 focus:peer-checked:bg-transparent" for="id-c001" onClick={(e)=>handleBuy(e)}>Buy</button>
         </>
     )}
     
