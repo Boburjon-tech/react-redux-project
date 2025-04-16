@@ -19,7 +19,10 @@ function Product({product}) {
     <section className='flex flex-col gap-5'>
     <img src={product.thumbnail}/>
    <Link to={`/producte/${product.id}`}>
-    <h2>{product.title}</h2>
+
+    <h2 className="font-bold text-3xl mb-5">{product.title}</h2>
+    <p className="font-medium text-2xl mb-3"><i>{product.price}</i>$</p>
+    <p className="mb-4">{product.description}</p>
     {isAdded && (
         <div className='gap-7 flex'>
             <button class="inline-flex items-center justify-center order-1 h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition-colors rounded cursor-pointer bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 peer-checked:bg-transparent peer-checked:text-slate-500 hover:peer-checked:bg-transparent peer-checked:hover:text-slate-600 focus:peer-checked:bg-transparent" for="id-c001" onClick={(e)=>{

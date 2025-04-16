@@ -17,11 +17,19 @@ const cartSlice = createSlice({
            const item = state.cart.find((i)=>i.id==payload);
            item.amount+=1
         },
-        decrementAmount:(state,{payload})=>{
-            const item = state.cart.find((i)=>i.id==payload);
-
-           
-        },
+        decrementAmount: (state, { payload }) => {
+            const itemIndex = state.cart.findIndex((i) => i.id === payload);
+            if (itemIndex !== -1) {
+                const item = state.cart[itemIndex];
+                if (item.amount > 1) {
+                    item.amount -= 1;
+                } else {
+                    state.cart.splice(itemIndex, 1);
+                }
+            }
+        }
+        ,
+        
         clearCart: ()=>{},
     },
 });
